@@ -1,4 +1,4 @@
-# # Task 1
+# Task 1
 import random
 #
 # random_int = random.randint(1, 10)
