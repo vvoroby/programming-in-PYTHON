@@ -70,12 +70,12 @@ def m(number_m, polka_m):
     if polka_m in directories.keys():
         for item in directories:
             if number_m in directories[item]:
-                del directories[polka_m][number_m]
-                directories[polka_m] = {number_m}
-                return print('Результат: Документ перемещен.')
-        return print('Результат: Документ не найден в базе.')
+                directories[item].remove(number_m)
+                directories[polka_m].append(number_m)
+                return (f'Результат: Документ перемещен. {tec_doc()}')
+        return (f'Результат: Документ не найден в базе. {tec_doc()}')
     else:
-        return print('Такой полки не существует. Текущий перечень полок: ', list(directories.keys()))
+        return (f'Такой полки не существует. Текущий перечень полок: {list(directories.keys())}')
 
 
 vvod = input('Введите команду: ')
@@ -114,7 +114,7 @@ while vvod != 'q':
     if vvod == 'm':
         number_m = input('Введите номер документа:')
         polka_m = input('Введите номер полки:')
-        m(number_m, polka_m)
+        print(m(number_m, polka_m))
 
     if vvod == 'help':
         print('p - узнать владельца документа по его номеру\n'
