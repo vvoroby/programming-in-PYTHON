@@ -108,7 +108,7 @@ while vvod != 'q':
         type_ad = input('Введите тип документа: ')
         name_ad = input('Введите владельца документа: ')
         num_polka = input('Введите полку для хранения: ')
-        print(ad(number_ad, type_ad, name_ad, num_polka))
+        print('Результат: ', ad(number_ad, type_ad, name_ad, num_polka))
         print('Текущий список документов:')
         pprint(l()) 
 
